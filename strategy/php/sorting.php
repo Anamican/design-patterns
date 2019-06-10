@@ -62,7 +62,7 @@ class ProductsSorter
       $this->sorter = $sorter;
   }
 
-  public function chooseSortingStrategy(string $sortBy){
+  public function selectSortingStrategy(string $sortBy){
     switch ($sortBy) {
       case 'ascending':
         $this->setSorter(new AscendingSort());
@@ -97,13 +97,13 @@ $sortBy = 'ascending';
 $sorter = new ProductsSorter();
 
 
-$sorter->chooseSortingStrategy($sortBy);
+$sorter->selectSortingStrategy($sortBy);
 $sortedValues = $sorter->sortProducts($products);
 
 print_r($sortedValues);
 
 $sortBy = 'descending';
-$sorter->chooseSortingStrategy($sortBy);
+$sorter->selectSortingStrategy($sortBy);
 $sortedValues = $sorter->sortProducts($products);
 
 print_r($sortedValues);
